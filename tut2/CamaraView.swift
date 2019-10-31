@@ -1,14 +1,22 @@
 import AVFoundation
 import UIKit
+import CoreData
 
 class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var productCode = ""
     
+    //    let moc = (UIApplication.sharedApplication().delegate
+    //    as! AppDelegate).managedObjectContext
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        save(title: "booktest123")
+        readData()
         
         view.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
@@ -47,6 +55,59 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         view.layer.addSublayer(previewLayer)
         
         captureSession.startRunning()
+    }
+    
+    func save(title: String) {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        // 1
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        // 2
+        let entity =
+            NSEntityDescription.entity(forEntityName: "Book",
+                                       in: managedContext)!
+        
+        let book = NSManagedObject(entity: entity,
+                                   insertInto: managedContext)
+        // 3
+        book.setValue("name", forKeyPath: "title")
+        
+        // 4
+        do {
+            try managedContext.save()
+            print("save")
+            //        people.append(book)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func readData(){
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        // 1
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Book")
+        
+        //3
+        do {
+            var books = try managedContext.fetch(fetchRequest)
+            for b in books{
+                print(b.value(forKey: "title"))
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+
     }
     
     func failed() {
@@ -88,33 +149,33 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     func found(code: String) {
         print(code)
-
+        
         let session = URLSession.shared
-//        let url = URL(string: "https://www3.consumer.org.hk/pricewatch/supermarket/index.php?keyword=" + code)!
+        //        let url = URL(string: "https://www3.consumer.org.hk/pricewatch/supermarket/index.php?keyword=" + code)!
         let url = URL(string: "https://isbnsearch.org/isbn/" + code)!
-
+        
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
             //            print(data)
             // Do something...
-//            let datas = String(data: data!, encoding: .utf8)!
+            //            let datas = String(data: data!, encoding: .utf8)!
             
             self.productCode = code
             
             //            print(datas)
             
-//            if let myRange = datas.range(of: "P000"){
-//                let a = myRange.lowerBound
-//                let b = datas.index(myRange.upperBound, offsetBy: 6)
-//                let mynewRange: Range = a..<b
-//                print(datas[mynewRange])
-//                self.productCode = String(datas[mynewRange])
-//                print("self.productCode " + self.productCode )
-////                self.i = 1
-//            }
-//            else{
-//                print("No such substring exists")
-//                self.productCode = ""
-//            }
+            //            if let myRange = datas.range(of: "P000"){
+            //                let a = myRange.lowerBound
+            //                let b = datas.index(myRange.upperBound, offsetBy: 6)
+            //                let mynewRange: Range = a..<b
+            //                print(datas[mynewRange])
+            //                self.productCode = String(datas[mynewRange])
+            //                print("self.productCode " + self.productCode )
+            ////                self.i = 1
+            //            }
+            //            else{
+            //                print("No such substring exists")
+            //                self.productCode = ""
+            //            }
             
             DispatchQueue.main.async {
                 self.showWebView()
