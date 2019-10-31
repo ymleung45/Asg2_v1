@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		76D3FDAD236864CA009E4E23 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D3FDAC236864CA009E4E23 /* WebView.swift */; };
+		76D3FDB2236A90F2009E4E23 /* Data.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D3FDB1236A90F2009E4E23 /* Data.storyboard */; };
 		76F2270423681BB7000D3A26 /* CamaraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F2270323681BB7000D3A26 /* CamaraView.swift */; };
 		87C2426E2330F3B300D402C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2426D2330F3B300D402C8 /* AppDelegate.swift */; };
 		87C242702330F3B300D402C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2426F2330F3B300D402C8 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		76D3FDAC236864CA009E4E23 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		76D3FDB1236A90F2009E4E23 /* Data.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Data.storyboard; sourceTree = SOURCE_ROOT; };
 		76F2270323681BB7000D3A26 /* CamaraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraView.swift; sourceTree = "<group>"; };
 		87C2426A2330F3B300D402C8 /* tut2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tut2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C2426D2330F3B300D402C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				87C2426D2330F3B300D402C8 /* AppDelegate.swift */,
 				87C2426F2330F3B300D402C8 /* ViewController.swift */,
+				76D3FDB1236A90F2009E4E23 /* Data.storyboard */,
 				87C242712330F3B300D402C8 /* Main.storyboard */,
 				87C242742330F3B500D402C8 /* Assets.xcassets */,
 				87C242762330F3B500D402C8 /* LaunchScreen.storyboard */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D3FDB2236A90F2009E4E23 /* Data.storyboard in Resources */,
 				87C242782330F3B500D402C8 /* LaunchScreen.storyboard in Resources */,
 				87C242752330F3B500D402C8 /* Assets.xcassets in Resources */,
 				87C242732330F3B300D402C8 /* Main.storyboard in Resources */,
