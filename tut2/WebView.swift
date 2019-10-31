@@ -15,7 +15,8 @@ class WebView: UIViewController {
     var productCode = ""
     @IBOutlet weak var webViewKit: WKWebView!
     
-    var sampleURL = "https://online-price-watch.consumer.org.hk/opw/product/"
+//    var sampleURL = "https://online-price-watch.consumer.org.hk/opw/product/"
+     var sampleURL = "https://isbnsearch.org/isbn/"
     
     override func viewDidLoad() {
         super.viewDidLoad()

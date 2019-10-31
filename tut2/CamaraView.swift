@@ -89,29 +89,32 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     func found(code: String) {
         print(code)
 
-        
         let session = URLSession.shared
-        let url = URL(string: "https://www3.consumer.org.hk/pricewatch/supermarket/index.php?keyword=4891944003716")!
+//        let url = URL(string: "https://www3.consumer.org.hk/pricewatch/supermarket/index.php?keyword=" + code)!
+        let url = URL(string: "https://isbnsearch.org/isbn/" + code)!
+
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
             //            print(data)
             // Do something...
-            let datas = String(data: data!, encoding: .utf8)!
+//            let datas = String(data: data!, encoding: .utf8)!
+            
+            self.productCode = code
             
             //            print(datas)
             
-            if let myRange = datas.range(of: "P000"){
-                let a = myRange.lowerBound
-                let b = datas.index(myRange.upperBound, offsetBy: 6)
-                let mynewRange: Range = a..<b
-                print(datas[mynewRange])
-                self.productCode = String(datas[mynewRange])
-                print("self.productCode " + self.productCode )
-//                self.i = 1
-            }
-            else{
-                print("No such substring exists")
-                self.productCode = ""
-            }
+//            if let myRange = datas.range(of: "P000"){
+//                let a = myRange.lowerBound
+//                let b = datas.index(myRange.upperBound, offsetBy: 6)
+//                let mynewRange: Range = a..<b
+//                print(datas[mynewRange])
+//                self.productCode = String(datas[mynewRange])
+//                print("self.productCode " + self.productCode )
+////                self.i = 1
+//            }
+//            else{
+//                print("No such substring exists")
+//                self.productCode = ""
+//            }
             
             DispatchQueue.main.async {
                 self.showWebView()
