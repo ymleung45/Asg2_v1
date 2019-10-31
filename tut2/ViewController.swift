@@ -14,15 +14,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
 
-    @IBOutlet weak var weight: UITextField!
-    @IBOutlet weak var height: UITextField!
-    
-    @IBOutlet weak var resultLabel: UILabel!
-    
-    
-    @IBAction func calBtn(_ sender: Any) {
-
-    }
 }
 
