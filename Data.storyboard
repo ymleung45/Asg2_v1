@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pYo-iG-iGD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="LVy-6L-jC7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pYo-iG-iGD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 2" id="IRP-IK-r65"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="43u-4A-P3X">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="puI-a0-C3Z" kind="relationship" relationship="rootViewController" id="37I-GY-gdJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j1A-tu-DPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597.10144927536237" y="36.830357142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FF0-Go-dma">
+            <objects>
+                <viewController id="puI-a0-C3Z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wu3-0Y-Dmt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JnN-ce-JBv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="STI-UK-Ups"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rm8-N7-Mzw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540.5797101449277" y="36.830357142857139"/>
+        </scene>
+    </scenes>
+</document>

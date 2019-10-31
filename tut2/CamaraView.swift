@@ -6,14 +6,6 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var previewLayer: AVCaptureVideoPreviewLayer!
     var productCode = ""
     
-    var i = 0 {
-        didSet {
-            print("Hello World.")
-            if i == 1 {
-             showWebView()
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
