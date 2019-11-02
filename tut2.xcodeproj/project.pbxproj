@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70255FF0236C05CE00FA8DFA /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70255FEF236C05CE00FA8DFA /* DataView.swift */; };
+		70255FF2236C4DCF00FA8DFA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70255FF1236C4DCF00FA8DFA /* DetailView.swift */; };
 		76D3FDAD236864CA009E4E23 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D3FDAC236864CA009E4E23 /* WebView.swift */; };
 		76D3FDB4236A9417009E4E23 /* Scanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D3FDB3236A9417009E4E23 /* Scanner.storyboard */; };
 		76D3FDB8236A9859009E4E23 /* Data.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D3FDB7236A9859009E4E23 /* Data.storyboard */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70255FEF236C05CE00FA8DFA /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		70255FF1236C4DCF00FA8DFA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		76D3FDAC236864CA009E4E23 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		76D3FDB3236A9417009E4E23 /* Scanner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Scanner.storyboard; sourceTree = "<group>"; };
 		76D3FDB7236A9859009E4E23 /* Data.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Data.storyboard; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				76D3FDB7236A9859009E4E23 /* Data.storyboard */,
+				70255FF1236C4DCF00FA8DFA /* DetailView.swift */,
+				70255FEF236C05CE00FA8DFA /* DataView.swift */,
 				76D3FDB3236A9417009E4E23 /* Scanner.storyboard */,
 				87C242712330F3B300D402C8 /* Main.storyboard */,
 				87C2426D2330F3B300D402C8 /* AppDelegate.swift */,
@@ -273,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70255FF0236C05CE00FA8DFA /* DataView.swift in Sources */,
 				76F2270423681BB7000D3A26 /* CamaraView.swift in Sources */,
 				76D3FDFA236AA5C1009E4E23 /* tut2.xcdatamodeld in Sources */,
+				70255FF2236C4DCF00FA8DFA /* DetailView.swift in Sources */,
 				76D3FDAD236864CA009E4E23 /* WebView.swift in Sources */,
 				87C242702330F3B300D402C8 /* ViewController.swift in Sources */,
 				87C2426E2330F3B300D402C8 /* AppDelegate.swift in Sources */,
@@ -455,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VNH637GYAB;
 				INFOPLIST_FILE = tut2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VNH637GYAB;
 				INFOPLIST_FILE = tut2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
