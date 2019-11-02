@@ -23,6 +23,8 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
