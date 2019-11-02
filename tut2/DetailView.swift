@@ -11,13 +11,28 @@ import UIKit
 class DetailView: UIViewController {
     
     var bookTitle = " "
-
+    var bookAuthor = " "
+    var bookPublisher = " "
+    var bookIsbn = " "
+    var bookImageUrl = " "
+    var bookUrl = " "
+    
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var authorLabel: UILabel!
+    @IBOutlet var publisherLabel: UILabel!
+    @IBOutlet var isbnLabel: UILabel!
+    @IBOutlet var imageUrlLabel: UILabel!
+    @IBOutlet var bookUrlLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = bookTitle
-        
+        authorLabel.text = bookAuthor
+        publisherLabel.text = bookPublisher
+        isbnLabel.text = bookIsbn
+        imageUrlLabel.text = bookImageUrl
+        bookUrlLabel.text = bookUrl
     }
     
 
