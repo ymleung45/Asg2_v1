@@ -16,6 +16,8 @@ class DetailView: UIViewController {
     var bookIsbn = " "
     var bookImageUrl = " "
     var bookUrl = " "
+    var publishDate = " "
+    var numPage = " "
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
@@ -23,7 +25,8 @@ class DetailView: UIViewController {
     @IBOutlet var isbnLabel: UILabel!
     @IBOutlet var imageUrlLabel: UILabel!
     @IBOutlet var bookUrlLabel: UILabel!
-    
+    @IBOutlet var publishDateLabel: UILabel!
+    @IBOutlet var numPageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,8 @@ class DetailView: UIViewController {
         isbnLabel.text = bookIsbn
         imageUrlLabel.text = bookImageUrl
         bookUrlLabel.text = bookUrl
+        publishDateLabel.text = publishDate
+        numPageLabel.text = numPage
     }
     
 
