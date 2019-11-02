@@ -9,11 +9,14 @@
 import UIKit
 
 class DetailView: UIViewController {
+    
+    var bookTitle = " "
 
     @IBOutlet var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = bookTitle
         
     }
     

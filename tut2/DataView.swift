@@ -46,9 +46,18 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let row = indexPath.row
         print(books[row])
         
+        
+        
         performSegue(withIdentifier: "showDetail", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let destinationVC = segue.destination as? DetailView {
+                destinationVC.bookTitle = "Example"
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
