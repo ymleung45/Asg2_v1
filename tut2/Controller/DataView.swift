@@ -52,11 +52,17 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as? BookTableViewCell else {
+            return UITableViewCell()
+        }
      
         let row = indexPath.row
-        cell.textLabel?.text = books[row][1] // 0-title
-     
+        // cell.textLabel?.text = books[row][1] // 0-title
+        // cell.foodImage.image = UIImage(named: food[indexPath.row].image)
+        cell.bookImage.image = UIImage(named: "book\(row + 1)")
+        cell.bookTitle.text = books[row][1]
+        cell.bookAuthor.text = books[row][2]
+        
         return cell
     }
   
