@@ -11,7 +11,6 @@ import UIKit
 class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
-    
     var bookTitle = " "
     var bookAuthor = " "
     var bookPublisher = " "
@@ -21,14 +20,6 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var publishDate = " "
     var numPage = " "
     
-    //@IBOutlet var titleLabel: UILabel!
-    //@IBOutlet var authorLabel: UILabel!
-    //@IBOutlet var publisherLabel: UILabel!
-    //@IBOutlet var isbnLabel: UILabel!
-    //@IBOutlet var imageUrlLabel: UILabel!
-    //@IBOutlet var bookUrlLabel: UILabel!
-    //@IBOutlet var publishDateLabel: UILabel!
-    //@IBOutlet var numPageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +27,7 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         
-        //titleLabel.text = bookTitle
-        //authorLabel.text = bookAuthor
-        //publisherLabel.text = bookPublisher
-        //isbnLabel.text = bookIsbn
-        //imageUrlLabel.text = bookImageUrl
-        //bookUrlLabel.text = bookUrl
-        //publishDateLabel.text = publishDate
-        //numPageLabel.text = numPage
+
     }
     
     @IBOutlet var tableView: UITableView!
@@ -87,15 +71,20 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section:Int) -> String? {
+        switch (section){
+        case 0: return "ISBN"
+        case 1: return "Title"
+        case 2: return "Author"
+        case 3: return "Publisher"
+        case 4: return "Publish Date"
+        case 5: return "Number of Page"
+        case 6: return "Cover Image Url"
+        case 7: return "Book Url"
+        default: return nil
+        }
     }
-    */
+
+    
 
 }
