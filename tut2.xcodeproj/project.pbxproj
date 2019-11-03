@@ -15,6 +15,8 @@
 		76D3FDB8236A9859009E4E23 /* Data.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D3FDB7236A9859009E4E23 /* Data.storyboard */; };
 		76D3FDFA236AA5C1009E4E23 /* tut2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76D3FDF8236AA5C1009E4E23 /* tut2.xcdatamodeld */; };
 		76F2270423681BB7000D3A26 /* CamaraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F2270323681BB7000D3A26 /* CamaraView.swift */; };
+		76FA6A62236F3CFC005347BA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA6A61236F3CFC005347BA /* Book.swift */; };
+		76FA6A64236F3D13005347BA /* BookJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA6A63236F3D13005347BA /* BookJson.swift */; };
 		87C2426E2330F3B300D402C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2426D2330F3B300D402C8 /* AppDelegate.swift */; };
 		87C242702330F3B300D402C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2426F2330F3B300D402C8 /* ViewController.swift */; };
 		87C242732330F3B300D402C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C242712330F3B300D402C8 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		76D3FDB7236A9859009E4E23 /* Data.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Data.storyboard; sourceTree = "<group>"; };
 		76D3FDF9236AA5C1009E4E23 /* tut2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tut2.xcdatamodel; sourceTree = "<group>"; };
 		76F2270323681BB7000D3A26 /* CamaraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraView.swift; sourceTree = "<group>"; };
+		76FA6A61236F3CFC005347BA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		76FA6A63236F3D13005347BA /* BookJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookJson.swift; sourceTree = "<group>"; };
 		87C2426A2330F3B300D402C8 /* tut2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tut2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C2426D2330F3B300D402C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C2426F2330F3B300D402C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				87C2426D2330F3B300D402C8 /* AppDelegate.swift */,
+				76FA6A61236F3CFC005347BA /* Book.swift */,
+				76FA6A63236F3D13005347BA /* BookJson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,11 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76FA6A64236F3D13005347BA /* BookJson.swift in Sources */,
 				70C0D32A236EE2B50043D317 /* BookTableViewCell.swift in Sources */,
 				70255FF0236C05CE00FA8DFA /* DataView.swift in Sources */,
 				76F2270423681BB7000D3A26 /* CamaraView.swift in Sources */,
 				76D3FDFA236AA5C1009E4E23 /* tut2.xcdatamodeld in Sources */,
 				70255FF2236C4DCF00FA8DFA /* DetailView.swift in Sources */,
+				76FA6A62236F3CFC005347BA /* Book.swift in Sources */,
 				76D3FDAD236864CA009E4E23 /* WebView.swift in Sources */,
 				87C242702330F3B300D402C8 /* ViewController.swift in Sources */,
 				87C2426E2330F3B300D402C8 /* AppDelegate.swift in Sources */,

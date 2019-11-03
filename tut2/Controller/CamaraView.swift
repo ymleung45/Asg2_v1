@@ -14,8 +14,8 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        save(title: "booktest123")
+        found(code: "123")
+//        save(title: "booktest123")
         readData()
         
         view.backgroundColor = UIColor.black
@@ -86,6 +86,7 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func readData(){
+        print("readData")
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -106,8 +107,6 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
-
     }
     
     func failed() {
