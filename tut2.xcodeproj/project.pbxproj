@@ -113,20 +113,12 @@
 		87C2426C2330F3B300D402C8 /* tut2 */ = {
 			isa = PBXGroup;
 			children = (
-				76D3FDB7236A9859009E4E23 /* Data.storyboard */,
-				A4808586236EA290000848E3 /* detailedView.storyboard */,
-				70255FF1236C4DCF00FA8DFA /* DetailView.swift */,
-				70255FEF236C05CE00FA8DFA /* DataView.swift */,
-				76D3FDB3236A9417009E4E23 /* Scanner.storyboard */,
-				87C242712330F3B300D402C8 /* Main.storyboard */,
-				87C2426D2330F3B300D402C8 /* AppDelegate.swift */,
+				A480858A236EA300000848E3 /* Controller */,
+				A4808589236EA2EC000848E3 /* View */,
+				A4808588236EA2DC000848E3 /* Model */,
 				76D3FDF8236AA5C1009E4E23 /* tut2.xcdatamodeld */,
-				87C2426F2330F3B300D402C8 /* ViewController.swift */,
 				87C242742330F3B500D402C8 /* Assets.xcassets */,
-				87C242762330F3B500D402C8 /* LaunchScreen.storyboard */,
 				87C242792330F3B500D402C8 /* Info.plist */,
-				76F2270323681BB7000D3A26 /* CamaraView.swift */,
-				76D3FDAC236864CA009E4E23 /* WebView.swift */,
 			);
 			path = tut2;
 			sourceTree = "<group>";
@@ -147,6 +139,38 @@
 				87C2428F2330F3B500D402C8 /* Info.plist */,
 			);
 			path = tut2UITests;
+			sourceTree = "<group>";
+		};
+		A4808588236EA2DC000848E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87C2426D2330F3B300D402C8 /* AppDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A4808589236EA2EC000848E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76D3FDB7236A9859009E4E23 /* Data.storyboard */,
+				A4808586236EA290000848E3 /* detailedView.storyboard */,
+				76D3FDB3236A9417009E4E23 /* Scanner.storyboard */,
+				87C242762330F3B500D402C8 /* LaunchScreen.storyboard */,
+				87C242712330F3B300D402C8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A480858A236EA300000848E3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				70255FF1236C4DCF00FA8DFA /* DetailView.swift */,
+				70255FEF236C05CE00FA8DFA /* DataView.swift */,
+				87C2426F2330F3B300D402C8 /* ViewController.swift */,
+				76D3FDAC236864CA009E4E23 /* WebView.swift */,
+				76F2270323681BB7000D3A26 /* CamaraView.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
