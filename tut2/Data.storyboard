@@ -55,7 +55,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="i3o-Ok-fFl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shelf" id="EHh-ld-7SW"/>
+                    <tabBarItem key="tabBarItem" title="Shelf" image="Webp.net-resizeimage-4" id="EHh-ld-7SW"/>
                     <navigationItem key="navigationItem" title="Book Shelf" id="l6A-Nb-Pas"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -82,7 +82,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktV-Nx-Bzk">
-                                <rect key="frame" x="0.0" y="413" width="414" height="449"/>
+                                <rect key="frame" x="0.0" y="412" width="414" height="449"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-oe-rG3">
@@ -187,6 +187,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Webp.net-resizeimage-4" width="31" height="31"/>
         <image name="book" width="512" height="512"/>
     </resources>
 </document>

@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="-371.01449275362324" y="-1010.4910714285713"/>
         </scene>
-        <!--Scanner-->
+        <!--Scan-->
         <scene sceneID="53r-78-e5o">
             <objects>
                 <viewController storyboardIdentifier="UIViewController-bzN-vW-6wz" id="bzN-vW-6wz" customClass="CamaraView" customModule="tut2" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Bj8-oO-rNi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scanner" id="LtV-Lc-1wQ"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="Webp.net-resizeimage-3" id="LtV-Lc-1wQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYw-OB-IQf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -69,4 +69,7 @@
             <point key="canvasLocation" x="598" y="-612"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Webp.net-resizeimage-3" width="28" height="28"/>
+    </resources>
 </document>
