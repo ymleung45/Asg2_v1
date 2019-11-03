@@ -62,104 +62,12 @@
                         <outlet property="shelfAuthorLabel" destination="ELm-uK-NSK" id="xPy-dt-aH1"/>
                         <outlet property="shelfTitleLabel" destination="d5W-GX-0lV" id="XgF-4C-iYV"/>
                         <outlet property="tableView" destination="AEP-YG-OlG" id="f13-oq-tgA"/>
-                        <segue destination="lXe-0E-zXq" kind="show" identifier="showDetail" id="kya-Gm-nyH"/>
+                        <segue destination="kBP-9x-Jnw" kind="show" identifier="showDetail" id="kya-Gm-nyH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dur-g1-zWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1840.5797101449277" y="-192.1875"/>
-        </scene>
-        <!--Book Information-->
-        <scene sceneID="duu-kX-Wkd">
-            <objects>
-                <viewController id="lXe-0E-zXq" customClass="DetailView" customModule="tut2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ppH-bC-KKc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zk1-js-5zY">
-                                <rect key="frame" x="58" y="173" width="299" height="159"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktV-Nx-Bzk">
-                                <rect key="frame" x="0.0" y="412" width="414" height="449"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-oe-rG3">
-                                        <rect key="frame" x="20" y="15" width="145.5" height="192"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wy-KS-FEe">
-                                                <rect key="frame" x="0.0" y="0.0" width="145.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mu8-DH-nf1">
-                                                <rect key="frame" x="0.0" y="24" width="145.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqR-7A-QUh">
-                                                <rect key="frame" x="0.0" y="48" width="145.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GH6-VS-Ig4">
-                                                <rect key="frame" x="0.0" y="72" width="145.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publish Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGE-CI-2gP" userLabel="Publish Date Label">
-                                                <rect key="frame" x="0.0" y="96" width="145.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Page:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhT-Fc-m1g" userLabel="NumPage Label">
-                                                <rect key="frame" x="0.0" y="120" width="145.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Url:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Li3-1A-YYh">
-                                                <rect key="frame" x="0.0" y="144" width="145.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Url:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfB-l4-U0n">
-                                                <rect key="frame" x="0.0" y="168" width="145.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="d9J-rn-PHz"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Book Information" id="vAa-ps-q3o"/>
-                    <connections>
-                        <outlet property="authorLabel" destination="dqR-7A-QUh" id="ZhT-0e-eag"/>
-                        <outlet property="bookUrlLabel" destination="ZfB-l4-U0n" id="5Pc-Mq-yqX"/>
-                        <outlet property="imageUrlLabel" destination="Li3-1A-YYh" id="CUG-Nu-99b"/>
-                        <outlet property="isbnLabel" destination="6Wy-KS-FEe" id="6RI-7l-Ryg"/>
-                        <outlet property="numPageLabel" destination="lhT-Fc-m1g" id="92a-z2-6o1"/>
-                        <outlet property="publishDateLabel" destination="IGE-CI-2gP" id="093-8u-xpX"/>
-                        <outlet property="publisherLabel" destination="GH6-VS-Ig4" id="weM-jz-YsX"/>
-                        <outlet property="titleLabel" destination="mu8-DH-nf1" id="9xN-kx-eRo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1OY-QU-L46" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2613.04347826087" y="-192.1875"/>
         </scene>
         <!--Item-->
         <scene sceneID="sjB-X0-D0t">
@@ -184,6 +92,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BkK-Of-eYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="930.43478260869574" y="-192.1875"/>
+        </scene>
+        <!--detailedView-->
+        <scene sceneID="51g-3C-d3G">
+            <objects>
+                <viewControllerPlaceholder storyboardName="detailedView" id="kBP-9x-Jnw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MqV-bC-iUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2613.04347826087" y="-192.1875"/>
         </scene>
     </scenes>
     <resources>

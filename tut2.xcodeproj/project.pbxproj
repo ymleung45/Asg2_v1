@@ -21,6 +21,7 @@
 		87C242782330F3B500D402C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C242762330F3B500D402C8 /* LaunchScreen.storyboard */; };
 		87C242832330F3B500D402C8 /* tut2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C242822330F3B500D402C8 /* tut2Tests.swift */; };
 		87C2428E2330F3B500D402C8 /* tut2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2428D2330F3B500D402C8 /* tut2UITests.swift */; };
+		A4808587236EA290000848E3 /* detailedView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4808586236EA290000848E3 /* detailedView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		87C242892330F3B500D402C8 /* tut2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tut2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C2428D2330F3B500D402C8 /* tut2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tut2UITests.swift; sourceTree = "<group>"; };
 		87C2428F2330F3B500D402C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4808586236EA290000848E3 /* detailedView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = detailedView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				76D3FDB7236A9859009E4E23 /* Data.storyboard */,
+				A4808586236EA290000848E3 /* detailedView.storyboard */,
 				70255FF1236C4DCF00FA8DFA /* DetailView.swift */,
 				70255FEF236C05CE00FA8DFA /* DataView.swift */,
 				76D3FDB3236A9417009E4E23 /* Scanner.storyboard */,
@@ -253,6 +256,7 @@
 				87C242782330F3B500D402C8 /* LaunchScreen.storyboard in Resources */,
 				87C242752330F3B500D402C8 /* Assets.xcassets in Resources */,
 				76D3FDB4236A9417009E4E23 /* Scanner.storyboard in Resources */,
+				A4808587236EA290000848E3 /* detailedView.storyboard in Resources */,
 				76D3FDB8236A9859009E4E23 /* Data.storyboard in Resources */,
 				87C242732330F3B300D402C8 /* Main.storyboard in Resources */,
 			);
