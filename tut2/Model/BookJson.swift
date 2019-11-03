@@ -15,11 +15,11 @@ class BookJson{
     struct Bookdata: Codable {
         let title: String
         let url: String
-        let publishDate: String
-        let numberOfPages: Int
-        let publishers: [Publishers]
+        let publishDate: String?
+        let numberOfPages: Int?
+        let publishers: [Publishers]?
         let authors: [Authors]
-        let cover: Cover
+        let cover: Cover?
         
         
         enum CodingKeys2: String, CodingKey{
@@ -29,7 +29,7 @@ class BookJson{
     }
     
     struct Publishers: Codable {
-        let name: String
+        let name: String?
     }
     
     struct Authors: Codable {
@@ -41,18 +41,26 @@ class BookJson{
     
     
     
-    func getdata(id:String){
+    static func getdata(id:String) -> BookModel {
+        
+        var bookRetun:BookModel?
+        
+        
         var datas = ""
         
         let url = URL(string: "https://openlibrary.org/api/books?bibkeys=ISBN:" + id + "&jscmd=data&format=json")!
         
         let session = URLSession.shared
         
+        let group = DispatchGroup()
+        group.enter()
+        
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
             datas = String(data: data!, encoding: .utf8)!
+            //                print(datas)
             datas =  "{\"ISBN\"" + String(datas.dropFirst(21))
             
-            print(datas)
+            //                print(datas)
             
             
             guard let data = datas.data(using: String.Encoding.utf8)
@@ -67,19 +75,21 @@ class BookJson{
                 let bookInstance = BookModel(
                     title: book.bookdata.title,
                     url: book.bookdata.url,
-                    publishDate: book.bookdata.publishDate,
-                    numberOfPages: book.bookdata.numberOfPages,
-                    publishers: book.bookdata.publishers[0].name,
+                    publishDate: book.bookdata.publishDate ?? "",
+                    numberOfPages: book.bookdata.numberOfPages ?? -1,
+                    publishers: book.bookdata.publishers?[0].name ?? "",
                     authors: book.bookdata.authors[0].name,
-                    cover: book.bookdata.cover.medium,
+                    cover: book.bookdata.cover?.medium ?? "",
                     isbn: "12345678"
                 )
                 
-                print(bookInstance.title)
+                print(bookInstance)
+                bookRetun = bookInstance
+                group.leave()
                 
-                DispatchQueue.main.async {
-                    bookInstance.storebook()
-                }
+                //                    DispatchQueue.main.async {
+                //                        //                    bookInstance.storebook()
+                //                    }
                 
             }
             catch {
@@ -87,6 +97,12 @@ class BookJson{
             }
         })
         task.resume()
+        group.wait()
+        print("group exit")
+        
+        return bookRetun!
+        
+        //        return
     }
     
     

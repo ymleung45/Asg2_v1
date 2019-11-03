@@ -93,7 +93,7 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 destinationVC.bookImageUrl = bookImageUrl
                 destinationVC.bookUrl = bookUrl
                 destinationVC.publishDate = publishDate
-                destinationVC.numPage = numPage
+                destinationVC.numPage = -1
             }
         }
     }

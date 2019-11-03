@@ -10,6 +10,8 @@ import UIKit
 
 class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var bookdata:BookModel?
+    
     
     var bookTitle = " "
     var bookAuthor = " "
@@ -18,16 +20,52 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var bookImageUrl = " "
     var bookUrl = " "
     var publishDate = " "
-    var numPage = " "
+    var numPage = -1
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bookTitle = bookdata?.title ?? ""
+        bookAuthor = bookdata?.authors ?? ""
+        bookPublisher = bookdata?.publishers ?? ""
+        bookIsbn = bookdata?.isbn ?? ""
+        bookImageUrl = bookdata?.cover ?? ""
+        bookUrl = bookdata?.url ?? ""
+        publishDate = bookdata?.publishDate ?? ""
+        numPage = bookdata?.numberOfPages ?? -1
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-
+        
+        let button = UIButton(frame: CGRect(x: 5, y: 48, width: 100, height: 50))
+        //        button.backgroundColor = .red
+        button.setTitleColor(.red, for: .normal)
+        button.setTitle("< Back", for: .normal)
+        button.addTarget(self, action: #selector(buttonBack), for: .touchUpInside)
+        
+        self.view.addSubview(button)
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        let button2 = UIButton(frame: CGRect(x: screenSize.width-105, y: 48, width: 100, height: 50))
+        //        button.backgroundColor = .red
+        button2.setTitleColor(.red, for: .normal)
+        button2.setTitle("Store", for: .normal)
+        button2.addTarget(self, action: #selector(buttonStore), for: .touchUpInside)
+        
+        self.view.addSubview(button2)
+        
+    }
+    
+    @objc func buttonBack(sender: UIButton!) {
+        print("back tapped")
+        self.dismiss(animated: true)
+    }
+    
+    @objc func buttonStore(sender: UIButton!) {
+        print("Button tapped")
     }
     
     @IBOutlet var tableView: UITableView!
@@ -60,7 +98,7 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell.textLabel?.text = publishDate
         }
         else if indexPath.section == 5 {
-            cell.textLabel?.text = numPage
+            cell.textLabel?.text = String(numPage)
         }
         else if indexPath.section == 6 {
             cell.textLabel?.text = bookImageUrl
@@ -84,7 +122,7 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         default: return nil
         }
     }
-
     
-
+    
+    
 }

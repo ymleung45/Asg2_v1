@@ -22,9 +22,9 @@ class WebView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let bookjson = BookJson()
-        bookjson.getdata(id: "9780980200447")
-        
+//        let bookjson = BookJson()
+        BookJson.getdata(id:"123")
+
         
         if(productCode != ""){
             sampleURL = sampleURL + productCode

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bzN-vW-6wz">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V34-ey-4Xh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="-371.01449275362324" y="-1010.4910714285713"/>
         </scene>
-        <!--Scan-->
+        <!--Scanner-->
         <scene sceneID="53r-78-e5o">
             <objects>
                 <viewController storyboardIdentifier="UIViewController-bzN-vW-6wz" id="bzN-vW-6wz" customClass="CamaraView" customModule="tut2" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,12 +59,50 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Bj8-oO-rNi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" image="Webp.net-resizeimage-3" id="LtV-Lc-1wQ"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="Webp.net-resizeimage-3" selectedImage="Webp.net-resizeimage-3" id="4So-30-mKs"/>
+                    <navigationItem key="navigationItem" title="Scanner" id="fwp-h9-T2J"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="m1H-fn-WLJ" kind="presentation" identifier="showDetailinScanner" modalPresentationStyle="fullScreen" id="Syf-Kd-Vfi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYw-OB-IQf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="-612"/>
+            <point key="canvasLocation" x="1507.2463768115942" y="-612.05357142857144"/>
+        </scene>
+        <!--detailedView-->
+        <scene sceneID="Obe-ff-7TP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="detailedView" id="m1H-fn-WLJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CSe-MD-X0Q"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9S2-fi-1NL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2260" y="-612"/>
+        </scene>
+        <!--Scanner-->
+        <scene sceneID="ZgV-Bb-ZWh">
+            <objects>
+                <navigationController title="Scanner" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="V34-ey-4Xh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scan" image="Webp.net-resizeimage-3" selectedImage="Webp.net-resizeimage-3" id="LtV-Lc-1wQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GOi-TK-Qhs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.53614799219999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zMz-fe-oHy">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="bzN-vW-6wz" kind="relationship" relationship="rootViewController" id="NYT-uG-gDY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0g-WA-lk7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597.10144927536237" y="-612.05357142857144"/>
         </scene>
     </scenes>
     <resources>

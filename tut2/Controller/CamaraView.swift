@@ -6,19 +6,23 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var productCode = ""
+    var bookData :BookModel?
     
     //    let moc = (UIApplication.sharedApplication().delegate
     //    as! AppDelegate).managedObjectContext
     
+    let screenSize: CGRect = UIScreen.main.bounds
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        found(code: "123")
-//        save(title: "booktest123")
-        readData()
         
-        view.backgroundColor = UIColor.black
+//        found(code: "9788831799003")
+        //        save(title: "booktest123")
+        //        readData()
+        
+        view.backgroundColor = UIColor(red:0.58, green:0.00, blue:0.09, alpha:1.0)
         captureSession = AVCaptureSession()
         
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -50,9 +54,38 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.layer.bounds
+//        previewLayer.frame = view.layer.bounds
+        previewLayer.frame = CGRect(x: 0, y: 60, width: screenSize.width, height: screenSize.height-60)
+
+        
+//        let mask = CALayer()
+////        mask.backgroundColor = UIColor(red:156.00, green:0.00, blue:15.0, alpha:1.0).cgColor
+//        mask.backgroundColor = UIColor.red.cgColor
+////         這邊我們必須設定顏色，否則沒有效果
+//
+//
+//        mask.frame = CGRect(x: 0, y: 50, width: screenSize.width, height: screenSize.height-30)
+//        previewLayer.mask = mask
+        
+        let textLayer = CATextLayer()
+        textLayer.frame = CGRect(x: 0, y: 27, width: screenSize.width, height: 30)
+        textLayer.string = "Scanner"
+        textLayer.alignmentMode = CATextLayerAlignmentMode.center
+//        textLayer.alignmentMode = kCAAlignmentCenter
+        textLayer.fontSize = 20
         previewLayer.videoGravity = .resizeAspectFill
         view.layer.addSublayer(previewLayer)
+        view.layer.addSublayer(textLayer)
+        
+        let button = UIButton(frame: CGRect(x: 5, y: 48, width: 1000, height: 500))
+        button.backgroundColor = .red
+        button.setTitleColor(.red, for: .normal)
+        button.setTitle("< Back", for: .normal)
+//        button.addTarget(self, action: #selector(showWebView), for: .touchUpInside)
+        
+//        view.layer.addSublayer(button)
+        
+        
         
         captureSession.startRunning()
     }
@@ -140,61 +173,88 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             guard let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             found(code: stringValue)
-            
+            return
         }
-        
-        //        dismiss(animated: true)
+        dismiss(animated: true)
     }
     
     func found(code: String) {
+               if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+        }
+        
         print(code)
         
-        let session = URLSession.shared
-        //        let url = URL(string: "https://www3.consumer.org.hk/pricewatch/supermarket/index.php?keyword=" + code)!
-        let url = URL(string: "https://isbnsearch.org/isbn/" + code)!
+        bookData = BookJson.getdata(id:code)
         
-        let task = session.dataTask(with: url, completionHandler: { data, response, error in
-            //            print(data)
-            // Do something...
-            //            let datas = String(data: data!, encoding: .utf8)!
-            
-            self.productCode = code
-            
-            //            print(datas)
-            
-            //            if let myRange = datas.range(of: "P000"){
-            //                let a = myRange.lowerBound
-            //                let b = datas.index(myRange.upperBound, offsetBy: 6)
-            //                let mynewRange: Range = a..<b
-            //                print(datas[mynewRange])
-            //                self.productCode = String(datas[mynewRange])
-            //                print("self.productCode " + self.productCode )
-            ////                self.i = 1
-            //            }
-            //            else{
-            //                print("No such substring exists")
-            //                self.productCode = ""
-            //            }
-            
-            DispatchQueue.main.async {
-                self.showWebView()
-            }
-            
-        })
-        task.resume()
+        
+        DispatchQueue.main.async {
+            self.showWebView()
+        }
+        
+        //        let session = URLSession.shared
+        //        //        let url = URL(string: "https://www3.consumer.org.hk/pricewatch/supermarket/index.php?keyword=" + code)!
+        //        let url = URL(string: "https://isbnsearch.org/isbn/" + code)!
+        //
+        //        let task = session.dataTask(with: url, completionHandler: { data, response, error in
+        //            //            print(data)
+        //            // Do something...
+        //            //            let datas = String(data: data!, encoding: .utf8)!
+        //
+        //            self.productCode = code
+        //            //            print(datas)
+        //
+        //            //            if let myRange = datas.range(of: "P000"){
+        //            //                let a = myRange.lowerBound
+        //            //                let b = datas.index(myRange.upperBound, offsetBy: 6)
+        //            //                let mynewRange: Range = a..<b
+        //            //                print(datas[mynewRange])
+        //            //                self.productCode = String(datas[mynewRange])
+        //            //                print("self.productCode " + self.productCode )
+        //            ////                self.i = 1
+        //            //            }
+        //            //            else{
+        //            //                print("No such substring exists")
+        //            //                self.productCode = ""
+        //            //            }
+        //
+        //            DispatchQueue.main.async {
+        //                self.showWebView()
+        //            }
+        //
+        //        })
+        //        task.resume()
         
         
         
     }
     
     func showWebView(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let newViewController = storyboard.instantiateViewController(withIdentifier: "webViewStoryborad") as! WebView
+//                performSegue(withIdentifier: "showDetailinScanner", sender: self)
         
-        newViewController.productCode = self.productCode
+//        let storyboard = UIStoryboard(name: "detailedView", bundle: nil)
+//
+//        let objVC = storyboard.instantiateViewController(withIdentifier: "detailview") as! DetailView
+//
+//
+//        let aObjNavi = UINavigationController(rootViewController: objVC)
+//
+//        self.navigationController?.pushViewController(aObjNavi, animated: true)
+
         
-        self.present(newViewController, animated: true, completion: nil)
+                let storyboard = UIStoryboard(name: "detailedView", bundle: nil)
+        //
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "detailview") as! DetailView
+                newViewController.modalPresentationStyle = .fullScreen
+        //
+//                let navController = UINavigationController(rootViewController: newViewController)
+        //
+                newViewController.bookdata = self.bookData
+//                self.navigationController?.present(navController, animated: true, completion: nil)
+//                print("present")
+        
+                self.present(newViewController, animated: true, completion: nil)
         
     }
     
