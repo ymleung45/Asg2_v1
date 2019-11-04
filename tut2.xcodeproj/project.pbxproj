@@ -25,6 +25,7 @@
 		87C242832330F3B500D402C8 /* tut2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C242822330F3B500D402C8 /* tut2Tests.swift */; };
 		87C2428E2330F3B500D402C8 /* tut2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2428D2330F3B500D402C8 /* tut2UITests.swift */; };
 		A4808587236EA290000848E3 /* detailedView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4808586236EA290000848E3 /* detailedView.storyboard */; };
+		A4E6F3F8237058E00052490D /* UrlDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6F3F7237058E00052490D /* UrlDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		87C2428D2330F3B500D402C8 /* tut2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tut2UITests.swift; sourceTree = "<group>"; };
 		87C2428F2330F3B500D402C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4808586236EA290000848E3 /* detailedView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = detailedView.storyboard; sourceTree = "<group>"; };
+		A4E6F3F7237058E00052490D /* UrlDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				70255FEF236C05CE00FA8DFA /* DataView.swift */,
 				87C2426F2330F3B300D402C8 /* ViewController.swift */,
 				76D3FDAC236864CA009E4E23 /* WebView.swift */,
+				A4E6F3F7237058E00052490D /* UrlDetail.swift */,
 				76F2270323681BB7000D3A26 /* CamaraView.swift */,
 			);
 			path = Controller;
@@ -326,6 +329,7 @@
 				76D3FDAD236864CA009E4E23 /* WebView.swift in Sources */,
 				87C242702330F3B300D402C8 /* ViewController.swift in Sources */,
 				87C2426E2330F3B300D402C8 /* AppDelegate.swift in Sources */,
+				A4E6F3F8237058E00052490D /* UrlDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,14 +505,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VNH637GYAB;
+				DEVELOPMENT_TEAM = VVW6RSQ4KU;
 				INFOPLIST_FILE = tut2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ymleung45.tut2;
+				PRODUCT_BUNDLE_IDENTIFIER = s0310111.tut2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,14 +524,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VNH637GYAB;
+				DEVELOPMENT_TEAM = VVW6RSQ4KU;
 				INFOPLIST_FILE = tut2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ymleung45.tut2;
+				PRODUCT_BUNDLE_IDENTIFIER = s0310111.tut2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

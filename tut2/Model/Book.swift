@@ -62,10 +62,10 @@ class BookModel {
         let group = DispatchGroup()
         
 
-        
+        group.enter()
         if let imageurlString = URL(string: self.cover) {
             print("Download Started")
-            group.enter()
+            
             geturlData(from: imageurlString) { data, response, error in
                 guard let data = data, error == nil else { return }
                 print(response?.suggestedFilename ?? imageurlString.lastPathComponent)

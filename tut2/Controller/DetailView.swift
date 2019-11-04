@@ -48,7 +48,7 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
             publishDate = bookDataModel?.publishDate ?? ""
             numPage = Int(bookDataModel?.numberOfPages ?? -1)
         }
-
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -84,12 +84,12 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         bookDataModel?.storebook()
         
         let alert = UIAlertController(title: "Book Stored", message: "", preferredStyle: .alert)
-
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
             (action: UIAlertAction!) -> Void in
-              self.dismiss(animated: true)
+            self.dismiss(animated: true)
         }))
-
+        
         self.present(alert, animated: true)
         
         
@@ -150,6 +150,22 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 7{
+            let storyboard = UIStoryboard(name: "detailedView", bundle: nil)
+            
+            
+            let newViewController = storyboard.instantiateViewController(withIdentifier: "UrlViewController") as! UrlDetail
+            newViewController.link = bookUrl
+
+            self.present(newViewController, animated: true, completion: nil)
+        }
+        
+        
+        
+    }
     
 }
