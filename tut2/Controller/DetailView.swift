@@ -54,7 +54,7 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.dataSource = self
         
         
-        let button = UIButton(frame: CGRect(x: 5, y: 48, width: 100, height: 50))
+        let button = UIButton(frame: CGRect(x: 5, y: 20, width: 100, height: 50))
         //        button.backgroundColor = .red
         button.setTitleColor(.red, for: .normal)
         button.setTitle("< Back", for: .normal)
@@ -64,7 +64,7 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         let screenSize: CGRect = UIScreen.main.bounds
         
-        let button2 = UIButton(frame: CGRect(x: screenSize.width-105, y: 48, width: 100, height: 50))
+        let button2 = UIButton(frame: CGRect(x: screenSize.width-105, y: 20, width: 100, height: 50))
         //        button.backgroundColor = .red
         button2.setTitleColor(.red, for: .normal)
         button2.setTitle("Store", for: .normal)

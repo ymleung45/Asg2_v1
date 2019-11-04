@@ -17,11 +17,11 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        found(code: "9788831799003")
+//        found(code: "9788831799003")
         //        save(title: "booktest123")
         //        readData()
         
-        view.backgroundColor = UIColor(red:0.58, green:0.00, blue:0.09, alpha:1.0)
+        view.backgroundColor = UIColor(red:0.61, green:0.00, blue:0.06, alpha:1.0)
         captureSession = AVCaptureSession()
         
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -54,7 +54,7 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
 //        previewLayer.frame = view.layer.bounds
-        previewLayer.frame = CGRect(x: 0, y: 60, width: screenSize.width, height: screenSize.height-60)
+        previewLayer.frame = CGRect(x: 0, y: 90, width: screenSize.width, height: screenSize.height-90)
 
         
 //        let mask = CALayer()
@@ -67,12 +67,15 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 //        previewLayer.mask = mask
         
         let textLayer = CATextLayer()
-        textLayer.frame = CGRect(x: 0, y: 27, width: screenSize.width, height: 30)
+        textLayer.frame = CGRect(x: 0, y: 53, width: screenSize.width, height: 30)
         textLayer.string = "Scanner"
         textLayer.alignmentMode = CATextLayerAlignmentMode.center
 //        textLayer.alignmentMode = kCAAlignmentCenter
         textLayer.fontSize = 20
+        textLayer.contentsScale = 2.0
+        
         previewLayer.videoGravity = .resizeAspectFill
+        
         view.layer.addSublayer(previewLayer)
         view.layer.addSublayer(textLayer)
         
