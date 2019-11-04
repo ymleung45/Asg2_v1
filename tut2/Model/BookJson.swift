@@ -80,7 +80,7 @@ class BookJson{
                     publishers: book.bookdata.publishers?[0].name ?? "",
                     authors: book.bookdata.authors[0].name,
                     cover: book.bookdata.cover?.medium ?? "",
-                    isbn: "12345678"
+                    isbn: id
                 )
                 
                 print(bookInstance)

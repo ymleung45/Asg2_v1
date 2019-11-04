@@ -32,7 +32,7 @@ class BookModel {
         self.isbn = isbn
     }
     
-    
+
     func storebook() {
         print("storing book....")
         guard let appDelegate =
@@ -63,7 +63,7 @@ class BookModel {
         // 4
         do {
             try managedContext.save()
-//            managedContext.reset()
+            //            managedContext.reset()
             print("save")
             //        people.append(book)
         } catch let error as NSError {

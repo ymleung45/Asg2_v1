@@ -10,7 +10,9 @@ import UIKit
 
 class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var bookdata:BookModel?
+    var bookdata:Book?
+    var bookDataModel:BookModel?
+    
     
     
     var bookTitle = " "
@@ -26,14 +28,27 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bookTitle = bookdata?.title ?? ""
-        bookAuthor = bookdata?.authors ?? ""
-        bookPublisher = bookdata?.publishers ?? ""
-        bookIsbn = bookdata?.isbn ?? ""
-        bookImageUrl = bookdata?.cover ?? ""
-        bookUrl = bookdata?.url ?? ""
-        publishDate = bookdata?.publishDate ?? ""
-        numPage = bookdata?.numberOfPages ?? -1
+        
+        if(bookdata != nil){
+            bookTitle = bookdata?.title ?? ""
+            bookAuthor = bookdata?.authors ?? ""
+            bookPublisher = bookdata?.publishers ?? ""
+            bookIsbn = bookdata?.isbn ?? ""
+            bookImageUrl = bookdata?.cover ?? ""
+            bookUrl = bookdata?.url ?? ""
+            publishDate = bookdata?.publishDate ?? ""
+            numPage = Int(bookdata?.numberOfPages ?? -1)
+        }else{
+            bookTitle = bookDataModel?.title ?? ""
+            bookAuthor = bookDataModel?.authors ?? ""
+            bookPublisher = bookDataModel?.publishers ?? ""
+            bookIsbn = bookDataModel?.isbn ?? ""
+            bookImageUrl = bookDataModel?.cover ?? ""
+            bookUrl = bookDataModel?.url ?? ""
+            publishDate = bookDataModel?.publishDate ?? ""
+            numPage = Int(bookDataModel?.numberOfPages ?? -1)
+        }
+
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -65,7 +80,9 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     @objc func buttonStore(sender: UIButton!) {
-        print("Button tapped")
+        print("store tapped")
+        bookDataModel?.storebook()
+        
     }
     
     @IBOutlet var tableView: UITableView!

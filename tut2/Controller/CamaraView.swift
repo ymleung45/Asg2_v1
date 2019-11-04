@@ -17,7 +17,6 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
 //        found(code: "9788831799003")
         //        save(title: "booktest123")
         //        readData()
@@ -76,16 +75,6 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         previewLayer.videoGravity = .resizeAspectFill
         view.layer.addSublayer(previewLayer)
         view.layer.addSublayer(textLayer)
-        
-        let button = UIButton(frame: CGRect(x: 5, y: 48, width: 1000, height: 500))
-        button.backgroundColor = .red
-        button.setTitleColor(.red, for: .normal)
-        button.setTitle("< Back", for: .normal)
-//        button.addTarget(self, action: #selector(showWebView), for: .touchUpInside)
-        
-//        view.layer.addSublayer(button)
-        
-        
         
         captureSession.startRunning()
     }
@@ -250,7 +239,8 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         //
 //                let navController = UINavigationController(rootViewController: newViewController)
         //
-                newViewController.bookdata = self.bookData
+                newViewController.bookDataModel = self.bookData
+        
 //                self.navigationController?.present(navController, animated: true, completion: nil)
 //                print("present")
         
