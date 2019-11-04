@@ -12,12 +12,12 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     //    as! AppDelegate).managedObjectContext
     
     let screenSize: CGRect = UIScreen.main.bounds
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        found(code: "9788831799003")
+                found(code: "9788831799003")
         //        save(title: "booktest123")
         //        readData()
         
@@ -53,24 +53,24 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-//        previewLayer.frame = view.layer.bounds
+        //        previewLayer.frame = view.layer.bounds
         previewLayer.frame = CGRect(x: 0, y: 90, width: screenSize.width, height: screenSize.height-90)
-
         
-//        let mask = CALayer()
-////        mask.backgroundColor = UIColor(red:156.00, green:0.00, blue:15.0, alpha:1.0).cgColor
-//        mask.backgroundColor = UIColor.red.cgColor
-////         這邊我們必須設定顏色，否則沒有效果
-//
-//
-//        mask.frame = CGRect(x: 0, y: 50, width: screenSize.width, height: screenSize.height-30)
-//        previewLayer.mask = mask
+        
+        //        let mask = CALayer()
+        ////        mask.backgroundColor = UIColor(red:156.00, green:0.00, blue:15.0, alpha:1.0).cgColor
+        //        mask.backgroundColor = UIColor.red.cgColor
+        ////         這邊我們必須設定顏色，否則沒有效果
+        //
+        //
+        //        mask.frame = CGRect(x: 0, y: 50, width: screenSize.width, height: screenSize.height-30)
+        //        previewLayer.mask = mask
         
         let textLayer = CATextLayer()
         textLayer.frame = CGRect(x: 0, y: 53, width: screenSize.width, height: 30)
         textLayer.string = "Scanner"
         textLayer.alignmentMode = CATextLayerAlignmentMode.center
-//        textLayer.alignmentMode = kCAAlignmentCenter
+        //        textLayer.alignmentMode = kCAAlignmentCenter
         textLayer.fontSize = 20
         textLayer.contentsScale = 2.0
         
@@ -178,9 +178,13 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     
     func found(code: String) {
-               if (captureSession?.isRunning == true) {
+        if (captureSession?.isRunning == true) {
             captureSession.stopRunning()
         }
+        
+        
+        let loadingalert = UIAlertController(title: "Loading...", message: "", preferredStyle: .alert)
+        self.present(loadingalert, animated: true)
         
         print(code)
         
@@ -188,15 +192,19 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         
         if(bookData != nil){
-        DispatchQueue.main.async {
-            self.showWebView()
-        }
+            DispatchQueue.main.async {
+                loadingalert.dismiss(animated: true){
+                self.showWebView()
+                }
+            }
         }else{
             let alert = UIAlertController(title: "No record found", message: "Please try agian", preferredStyle: .alert)
-
+            
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
 
-            self.present(alert, animated: true)
+            loadingalert.dismiss(animated: true){
+                self.present(alert, animated: true)
+            }
             
             restartScanner()
         }
@@ -240,31 +248,31 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     func showWebView(){
         
-//                performSegue(withIdentifier: "showDetailinScanner", sender: self)
+        //                performSegue(withIdentifier: "showDetailinScanner", sender: self)
         
-//        let storyboard = UIStoryboard(name: "detailedView", bundle: nil)
-//
-//        let objVC = storyboard.instantiateViewController(withIdentifier: "detailview") as! DetailView
-//
-//
-//        let aObjNavi = UINavigationController(rootViewController: objVC)
-//
-//        self.navigationController?.pushViewController(aObjNavi, animated: true)
-
-        
-                let storyboard = UIStoryboard(name: "detailedView", bundle: nil)
+        //        let storyboard = UIStoryboard(name: "detailedView", bundle: nil)
         //
-                let newViewController = storyboard.instantiateViewController(withIdentifier: "detailview") as! DetailView
-                newViewController.modalPresentationStyle = .fullScreen
+        //        let objVC = storyboard.instantiateViewController(withIdentifier: "detailview") as! DetailView
         //
-//                let navController = UINavigationController(rootViewController: newViewController)
         //
-                newViewController.bookDataModel = self.bookData
+        //        let aObjNavi = UINavigationController(rootViewController: objVC)
+        //
+        //        self.navigationController?.pushViewController(aObjNavi, animated: true)
         
-//                self.navigationController?.present(navController, animated: true, completion: nil)
-//                print("present")
         
-                self.present(newViewController, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "detailedView", bundle: nil)
+        //
+        let newViewController = storyboard.instantiateViewController(withIdentifier: "detailview") as! DetailView
+        newViewController.modalPresentationStyle = .fullScreen
+        //
+        //                let navController = UINavigationController(rootViewController: newViewController)
+        //
+        newViewController.bookDataModel = self.bookData
+        
+        //                self.navigationController?.present(navController, animated: true, completion: nil)
+        //                print("present")
+        
+        self.present(newViewController, animated: true, completion: nil)
         
     }
     

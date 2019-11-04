@@ -81,17 +81,26 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @objc func buttonStore(sender: UIButton!) {
         print("store tapped")
+        
+        let loadingalert = UIAlertController(title: "Loading...", message: "", preferredStyle: .alert)
+        self.present(loadingalert, animated: true)
+        
         bookDataModel?.storebook()
-        
+//
         let alert = UIAlertController(title: "Book Stored", message: "", preferredStyle: .alert)
-        
+
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
             (action: UIAlertAction!) -> Void in
             self.dismiss(animated: true)
         }))
         
-        self.present(alert, animated: true)
-        
+
+        loadingalert.dismiss(animated: true){
+            self.present(alert, animated: true)
+        }
+
+//        self.present(alert, animated: true)
+//
         
     }
     
