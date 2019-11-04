@@ -41,7 +41,7 @@ class BookJson{
     
     
     
-    static func getdata(id:String) -> BookModel {
+    static func getdata(id:String) -> BookModel? {
         
         var bookRetun:BookModel?
         
@@ -53,6 +53,7 @@ class BookJson{
         let session = URLSession.shared
         
         let group = DispatchGroup()
+        
         group.enter()
         
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
@@ -93,17 +94,21 @@ class BookJson{
                 
             }
             catch {
-                print(error)
+                print("no record found")
+                group.leave()
             }
+            
         })
         task.resume()
         group.wait()
         print("group exit")
         
-        return bookRetun!
+        return bookRetun
         
         //        return
     }
+    
+
     
     
 }

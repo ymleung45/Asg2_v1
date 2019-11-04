@@ -45,7 +45,7 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         readData()
-//        tableView.reloadData()
+        //        tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -103,17 +103,41 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let row = indexPath.row
         // cell.textLabel?.text = books[row][1] // 0-title
         // cell.foodImage.image = UIImage(named: food[indexPath.row].image)
-        cell.bookImage.image = UIImage(named: "book\(row + 1)")
+        if(booksData[row].coverimage != nil){
+            cell.bookImage.image = UIImage(data: booksData[row].coverimage!)
+        }else{
+         cell.bookImage.image = UIImage(named: "book\(1)")
+        }
+        
+        
+        
+       
         cell.bookTitle.text = booksData[row].title
         cell.bookAuthor.text = booksData[row].authors
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-        booksData.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-     }
+        if editingStyle == .delete {
+          
+            
+            guard let appDelegate =
+                UIApplication.shared.delegate as? AppDelegate else {
+                    return
+            }
+            // 1
+            let managedContext =
+                appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest =
+                NSFetchRequest<NSManagedObject>(entityName: "Book")
+            
+            managedContext.delete(booksData[indexPath.row])
+            
+            booksData.remove(at: indexPath.row)
+                      tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -137,14 +161,14 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let destinationVC = segue.destination as? DetailView {
-//                destinationVC.bookIsbn = bookIsbn
-//                destinationVC.bookTitle = bookTitle
-//                destinationVC.bookAuthor = bookAuthor
-//                destinationVC.bookPublisher = bookPublisher
-//                destinationVC.bookImageUrl = bookImageUrl
-//                destinationVC.bookUrl = bookUrl
-//                destinationVC.publishDate = publishDate
-//                destinationVC.numPage = -1
+                //                destinationVC.bookIsbn = bookIsbn
+                //                destinationVC.bookTitle = bookTitle
+                //                destinationVC.bookAuthor = bookAuthor
+                //                destinationVC.bookPublisher = bookPublisher
+                //                destinationVC.bookImageUrl = bookImageUrl
+                //                destinationVC.bookUrl = bookUrl
+                //                destinationVC.publishDate = publishDate
+                //                destinationVC.numPage = -1
                 destinationVC.bookdata = currentBook
             }
         }

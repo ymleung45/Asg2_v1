@@ -17,7 +17,7 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        found(code: "9788831799003")
+        found(code: "9788831799003")
         //        save(title: "booktest123")
         //        readData()
         
@@ -167,6 +167,13 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         dismiss(animated: true)
     }
     
+    func restartScanner(){
+        if (captureSession?.isRunning == false) {
+            captureSession.startRunning()
+        }
+    }
+    
+    
     func found(code: String) {
                if (captureSession?.isRunning == true) {
             captureSession.stopRunning()
@@ -177,8 +184,18 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         bookData = BookJson.getdata(id:code)
         
         
+        if(bookData != nil){
         DispatchQueue.main.async {
             self.showWebView()
+        }
+        }else{
+            let alert = UIAlertController(title: "No record found", message: "Please try agian", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
+            
+            restartScanner()
         }
         
         //        let session = URLSession.shared

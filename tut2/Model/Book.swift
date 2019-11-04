@@ -32,7 +32,7 @@ class BookModel {
         self.isbn = isbn
     }
     
-
+    
     func storebook() {
         print("storing book....")
         guard let appDelegate =
@@ -59,7 +59,32 @@ class BookModel {
         book.setValue(self.cover, forKeyPath: "cover")
         book.setValue(self.isbn, forKeyPath: "isbn")
         
+        let group = DispatchGroup()
         
+
+        
+        if let imageurlString = URL(string: self.cover) {
+            print("Download Started")
+            group.enter()
+            geturlData(from: imageurlString) { data, response, error in
+                guard let data = data, error == nil else { return }
+                print(response?.suggestedFilename ?? imageurlString.lastPathComponent)
+                print("Download Finished")
+                
+                let imageData =  UIImage(data: data)?.pngData()
+               
+                DispatchQueue.main.async() {
+                    book.setValue(imageData, forKeyPath: "coverimage")
+                }
+                group.leave()
+            }
+        }else{
+             group.leave()
+        }
+       
+
+
+        group.wait()
         // 4
         do {
             try managedContext.save()
@@ -69,6 +94,11 @@ class BookModel {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+    }
+
+    
+    func geturlData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
     

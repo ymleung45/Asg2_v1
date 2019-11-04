@@ -83,6 +83,16 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         print("store tapped")
         bookDataModel?.storebook()
         
+        let alert = UIAlertController(title: "Book Stored", message: "", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+            (action: UIAlertAction!) -> Void in
+              self.dismiss(animated: true)
+        }))
+
+        self.present(alert, animated: true)
+        
+        
     }
     
     @IBOutlet var tableView: UITableView!

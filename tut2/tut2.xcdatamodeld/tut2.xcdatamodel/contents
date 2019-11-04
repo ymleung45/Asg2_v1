@@ -3,6 +3,7 @@
     <entity name="Book" representedClassName="Book" syncable="YES" codeGenerationType="class">
         <attribute name="authors" optional="YES" attributeType="String"/>
         <attribute name="cover" optional="YES" attributeType="String"/>
+        <attribute name="coverimage" optional="YES" attributeType="Binary"/>
         <attribute name="isbn" optional="YES" attributeType="String"/>
         <attribute name="numberOfPages" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="publishDate" optional="YES" attributeType="String"/>
@@ -11,6 +12,6 @@
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Book" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>
