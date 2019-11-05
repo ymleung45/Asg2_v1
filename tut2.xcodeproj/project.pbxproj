@@ -56,7 +56,7 @@
 		76F2270323681BB7000D3A26 /* CamaraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraView.swift; sourceTree = "<group>"; };
 		76FA6A61236F3CFC005347BA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		76FA6A63236F3D13005347BA /* BookJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookJson.swift; sourceTree = "<group>"; };
-		87C2426A2330F3B300D402C8 /* tut2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tut2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C2426A2330F3B300D402C8 /* ISBN Scann.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ISBN Scann.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C2426D2330F3B300D402C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C2426F2330F3B300D402C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87C242722330F3B300D402C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		87C2426B2330F3B300D402C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87C2426A2330F3B300D402C8 /* tut2.app */,
+				87C2426A2330F3B300D402C8 /* ISBN Scann.app */,
 				87C2427E2330F3B500D402C8 /* tut2Tests.xctest */,
 				87C242892330F3B500D402C8 /* tut2UITests.xctest */,
 			);
@@ -202,7 +202,7 @@
 			);
 			name = tut2;
 			productName = tut2;
-			productReference = 87C2426A2330F3B300D402C8 /* tut2.app */;
+			productReference = 87C2426A2330F3B300D402C8 /* ISBN Scann.app */;
 			productType = "com.apple.product-type.application";
 		};
 		87C2427D2330F3B500D402C8 /* tut2Tests */ = {
@@ -505,15 +505,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VVW6RSQ4KU;
+				DEVELOPMENT_TEAM = VNH637GYAB;
 				INFOPLIST_FILE = tut2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = s0310111.tut2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = s0310111.tut23;
+				PRODUCT_NAME = "ISBN Scann";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -524,15 +524,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VVW6RSQ4KU;
+				DEVELOPMENT_TEAM = VNH637GYAB;
 				INFOPLIST_FILE = tut2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = s0310111.tut2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = s0310111.tut23;
+				PRODUCT_NAME = "ISBN Scann";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

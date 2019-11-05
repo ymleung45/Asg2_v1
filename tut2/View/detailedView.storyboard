@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lXe-0E-zXq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lXe-0E-zXq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--Book Information-->
         <scene sceneID="duu-kX-Wkd">
             <objects>
-                <viewController storyboardIdentifier="detailview" id="lXe-0E-zXq" customClass="DetailView" customModule="tut2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailview" id="lXe-0E-zXq" customClass="DetailView" customModule="ISBN_Scann" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ppH-bC-KKc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,14 +48,13 @@
         <!--Url Detail-->
         <scene sceneID="eSE-SD-eNW">
             <objects>
-                <viewController storyboardIdentifier="UrlViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0jz-aR-3qh" customClass="UrlDetail" customModule="tut2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UrlViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0jz-aR-3qh" customClass="UrlDetail" customModule="ISBN_Scann" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UP6-n4-Yoi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4T-5o-Lre">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4T-5o-Lre">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -64,6 +63,12 @@
                             </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="o4T-5o-Lre" firstAttribute="top" secondItem="7Ek-lF-YLI" secondAttribute="top" id="Cmn-dV-Q87"/>
+                            <constraint firstItem="o4T-5o-Lre" firstAttribute="bottom" secondItem="7Ek-lF-YLI" secondAttribute="bottom" id="Nrs-Xv-TSc"/>
+                            <constraint firstItem="o4T-5o-Lre" firstAttribute="trailing" secondItem="7Ek-lF-YLI" secondAttribute="trailing" id="ZPH-Nc-UGi"/>
+                            <constraint firstItem="o4T-5o-Lre" firstAttribute="leading" secondItem="7Ek-lF-YLI" secondAttribute="leading" id="xCf-6o-ZZ8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7Ek-lF-YLI"/>
                     </view>
                     <connections>

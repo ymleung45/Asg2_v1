@@ -8,6 +8,9 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var productCode = ""
     var bookData :BookModel?
     
+    var qrCodeFrameView: UIView?
+
+    
     //    let moc = (UIApplication.sharedApplication().delegate
     //    as! AppDelegate).managedObjectContext
     
@@ -78,6 +81,22 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         view.layer.addSublayer(previewLayer)
         view.layer.addSublayer(textLayer)
+        
+        qrCodeFrameView = UIView()
+        
+        qrCodeFrameView?.layer.borderColor = UIColor.green.cgColor
+        qrCodeFrameView?.layer.borderWidth = 2
+        qrCodeFrameView?.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(qrCodeFrameView!)
+        let qrviewWidth = view.bounds.width*0.8
+        let qrviewHeight = qrviewWidth
+        //qrCodeFrameView?.frame = CGRect(x: (view.bounds.width-qrviewWidth)/2, y: (view.bounds.height-qrviewHeight)/2, width: qrviewWidth, height: qrviewHeight)
+        self.qrCodeFrameView?.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant:0).isActive = true
+        self.qrCodeFrameView?.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant:0).isActive = true
+        self.qrCodeFrameView?.widthAnchor.constraint(equalToConstant: qrviewWidth).isActive = true
+        self.qrCodeFrameView?.heightAnchor.constraint(equalToConstant: qrviewHeight).isActive = true
+        self.view.bringSubviewToFront(qrCodeFrameView!)
+        
         
         captureSession.startRunning()
     }
