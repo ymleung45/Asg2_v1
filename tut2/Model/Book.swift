@@ -73,9 +73,8 @@ class BookModel {
                 
                 let imageData =  UIImage(data: data)?.pngData()
                
-                DispatchQueue.main.async() {
-                    book.setValue(imageData, forKeyPath: "coverimage")
-                }
+                book.setValue(imageData, forKeyPath: "coverimage")
+
                 group.leave()
             }
         }else{

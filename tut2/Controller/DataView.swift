@@ -45,7 +45,7 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         readData()
-        //        tableView.reloadData()
+        tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -101,12 +101,13 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         
         let row = indexPath.row
-        // cell.textLabel?.text = books[row][1] // 0-title
-        // cell.foodImage.image = UIImage(named: food[indexPath.row].image)
+        print("set image: " + booksData[row].title!)
         if(booksData[row].coverimage != nil){
+            print("set image: " + booksData[row].cover!)
             cell.bookImage.image = UIImage(data: booksData[row].coverimage!)
         }else{
-         cell.bookImage.image = UIImage(named: "book\(1)")
+            print("set image no image found")
+         cell.bookImage.image = UIImage(named: "book\(2)")
         }
         
         
@@ -136,6 +137,8 @@ class DataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             booksData.remove(at: indexPath.row)
                       tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            appDelegate.saveContext()
             
         }
     }

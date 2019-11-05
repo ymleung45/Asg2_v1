@@ -17,7 +17,7 @@ class CamaraView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-                found(code: "9788831799003")
+        //        found(code: "9788831799003")
         //        save(title: "booktest123")
         //        readData()
         
