@@ -11,20 +11,21 @@ import WebKit
 
 class UrlDetail: UIViewController {
     
-    var link: String?
+    var link = ""
 
+    @IBOutlet weak var urlView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        sendRequest(urlString: link ?? "")
+        print("Link: " + link)
+        sendRequest(urlString: link )
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var urlView: WKWebView!
     
     
     
     private func sendRequest(urlString: String) {
-        
         let myURL = URL(string: urlString)
         let myRequest = URLRequest(url: myURL!)
         urlView.load(myRequest)

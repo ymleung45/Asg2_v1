@@ -169,6 +169,7 @@ class DetailView: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             let newViewController = storyboard.instantiateViewController(withIdentifier: "UrlViewController") as! UrlDetail
             newViewController.link = bookUrl
+            print(bookUrl)
 
             self.present(newViewController, animated: true, completion: nil)
         }
